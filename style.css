@@ -1,52 +1,117 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
 }
+
 .grid-container {
   display: grid;
-  height:100vh;
+  height: 100vh;
 
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 0.2fr 1.5fr 1.2fr 0.2fr;
-grid-template-areas:
-'nav nav nav nav'
-'main main main sidebar'
-'content1 content1 content2 sidebar'
-'footer footer footer footer';
-grid-gap:20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.5fr 0.2fr;
+  grid-template-areas:
+    'nav nav nav nav'
+    'main main main sidebar'
+    'content1 content1 content2 sidebar'
+    'footer footer footer footer';
+  grid-gap: 20px;
 }
-.nav{
-  border:1px solid red;
+
+.nav {
+  border: 1px solid red;
   background-color: pink;
-  grid-area:nav;
+  grid-area: nav;
 }
-main{
+
+main {
   border: 3px solid green;
   background-color: aquamarine;
   grid-area: main;
 }
+
 aside {
-  border:4px solid blue
-  background-color: yellow;
-  grid-area:sidebar;
+  border: 4px solid blue background-color: yellow;
+  grid-area: sidebar;
 }
+
 .content1 {
-border:4px solid yellow;
-background-color: blueviolet;
-grid-area:content1;
+  border: 4px solid yellow;
+  background-color: blueviolet;
+  grid-area: content1;
+  width: 50%;
 }
+
 .content2 {
-  border:4px solid red;
+  border: 4px solid red;
   background-color: brown;
-  grid-area:content2;
+  grid-area: content2;
+  width: 50%;
 
 }
+
 footer {
-  border:3px solid pink;
+  border: 3px solid pink;
   background-color: grey;
-  grid-area:footer;
+  grid-area: footer;
 }
-.main-image{
+
+.main-image {
   size: 100px;
 
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-container {
+  display: flex;
+}
+
+.footer-container {
+  display: flex;
+}
+.foot-section {
+  display:flex;
+  flex-direction: column;
+  padding:1em
+}
+.f-contain {
+  display:flex;
+  flex-direction: row;
+}
+h1{
+  padding:0.5em;
+  font-size:24px;
+  text-align: center;
+}
+.btn {
+  color:blue;
+  font-size: 20px;
+}
+.lead {
+
+  padding: 1em 1em;
+}
+hr {
+  color:white;
+}
+h2 {
+  color:white;
+}
+.second-title {
+  color:gold;
+}
+h3{
+  color:blue;
+}
+h4 {
+  color:black;
+  
+}
+aside p{
+  color:white;
+  
 }
