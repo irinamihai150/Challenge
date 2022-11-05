@@ -4,7 +4,6 @@
 }
 
 body {
-  font-size: 15px;
   font-family: [Inter](https: //fonts.google.com/specimen/Inter);
   }
 
@@ -12,7 +11,7 @@ body {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.5fr 0.2fr;
+    grid-template-rows: 0.2fr 1.5fr 1.5fr 0.2fr 0.2fr;
     grid-template-areas: 'nav nav nav nav'
     'main main main sidebar'
     'content1 content1 content2 sidebar'
@@ -28,6 +27,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
   }
+
   nav li a:hover {
     color:hsl(5, 85%, 63%);
     cursor:pointer;
@@ -45,7 +45,7 @@ body {
 
   aside {
     grid-area: sidebar;
-   margin-right:2em
+    margin-right:2em
   }
 
   .main-container {
@@ -59,7 +59,11 @@ body {
     grid-area: content1;
     width: 40%;
   }
-  .footer-container{
+  .content1 h1 {
+    font-size: 4em;
+  }
+
+  .footer-container {
     grid-area: footer-container;
   }
 
@@ -85,7 +89,6 @@ body {
   footer {
     grid-area: footer;
     margin-left: 2em;
-    
     padding: 5em;
 
   }
@@ -103,7 +106,8 @@ body {
   h2 {
     color: white;
   }
-  h2:hover{
+
+  h2:hover {
     cursor:pointer;
     color:hsl(35, 77%, 62%);
   }
@@ -121,6 +125,7 @@ body {
     color: rgb(0, 0, 0);
     font-weight: 200;
   }
+
   h4:hover {
     color:red;
     cursor:pointer;
@@ -131,7 +136,9 @@ body {
   }
 
   h1 {
+    font-size: 10em;
     padding: 0.5em;
+    text-align:left;
   }
 
   button {
@@ -142,7 +149,8 @@ body {
     height: 3em;
     cursor:pointer
   }
-  button:hover{
+
+  button:hover {
     color: white;
     background-color: black;
   }
@@ -154,13 +162,13 @@ body {
   .foot-section {
     display: flex;
     flex-direction: column;
-    padding: 1em
+    padding: 1em;
   }
 
   .f-contain {
     display: flex;
     flex-direction: row;
-  margin-top: 3em;
+    margin-top: 3em;
     margin-left: 2em;
     margin-right: 2em;
   }
