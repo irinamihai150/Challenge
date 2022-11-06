@@ -3,223 +3,266 @@
   padding: 0;
 }
 
-body p {
- font-size: 30px;
-  }
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.5fr 0.2fr;
+  grid-template-areas: 'nav nav nav nav'
+    'main main main sidebar'
+    'content1 content1 content2 sidebar'
+    'article-container article-container article-container article-container'
+    'footer footer footer footer';
+  grid-gap: 30px;
+}
+
+nav {
+  margin: 2em;
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+nav li a:hover {
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+
+main {
+  grid-area: main;
+  margin-left: 2em;
+}
+
+main img {
+  width: 100%;
+}
+
+
+aside {
+  grid-area: sidebar;
+  margin-right: 2em
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.content1 {
+  grid-area: content1;
+  width: 40%;
+}
+
+.content1 h1 {
+  font-size: 4em;
+}
+
+.article-container {
+  grid-area: article-container;
+}
+
+.content2 {
+  grid-area: content2;
+  width: 35%;
+}
+
+.content2 p {
+  color: hsl(236, 13%, 42%);
+}
+
+.sidebar {
+  background-color: black;
+  padding: 2em 1em;
+}
+
+article {
+  padding: 2em;
+}
+
+
+footer {
+  grid-area: footer;
+  margin-left: 2em;
+  padding: 5em;
+
+}
+
+.lead {
+  padding: 1em 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+hr {
+  color: red;
+}
+
+h2 {
+  color: white;
+}
+
+h2:hover {
+  cursor: pointer;
+  color: hsl(35, 77%, 62%);
+}
+
+.second-title {
+  color: hsl(35, 77%, 62%);
+  padding-bottom: 1em;
+}
+
+h3 {
+  color: hsl(233, 8%, 79%)
+}
+
+h4 {
+  color: rgb(0, 0, 0);
+  font-weight: 200;
+}
+
+h4:hover {
+  color: red;
+  cursor: pointer;
+}
+
+aside p {
+  color: white;
+}
+
+h1 {
+  font-size: 10em;
+  padding: 0.5em;
+  text-align: left;
+}
+
+button {
+  font-size: 20px;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  width: 10em;
+  height: 3em;
+  cursor: pointer
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}
+
+.article-container {
+  display: flex;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
 
   .grid-container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.5fr 0.2fr;
-    grid-template-areas: 'nav nav nav nav'
-    'main main main sidebar'
-    'content1 content1 content2 sidebar'
-    'footer-container footer-container footer-container footer-container'
-    'footer footer footer footer';
-    grid-gap: 30px;
-  }
-
-  nav {
-    margin: 2em;
-    grid-area: nav;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 20px;
-  }
-
-  nav li a:hover {
-    color:hsl(5, 85%, 63%);
-    cursor:pointer;
-  }
-
-  main {
-    grid-area: main;
-    margin-left: 2em;
-  }
-
-  main img {
-    width: 100%;
-  }
-
-
-  aside {
-    grid-area: sidebar;
-    margin-right:2em
-  }
-
-  .main-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-  }
-
-  .content1 {
-    grid-area: content1;
-    width: 40%;
-  }
-  .content1 h1 {
-    font-size: 4em;
-  }
-
-  .footer-container {
-    grid-area: footer-container;
-  }
-
-  .content2 {
-    grid-area: content2;
-    width: 35%;
-  }
-
-  .content2 p {
-    color: hsl(236, 13%, 42%);
-  }
-
-  .sidebar {
-    background-color: black;
-    padding: 2em 1em;
-  }
-
-  article {
-    padding: 2em;
-  }
-
-
-  footer {
-    grid-area: footer;
-    margin-left: 2em;
-    padding: 5em;
-
-  }
-
-  .lead {
-    padding: 1em 2em;
-    margin-bottom: 2em;
-    margin-top: 2em;
-  }
-
-  hr {
-    color: red;
-  }
-
-  h2 {
-    color: white;
-  }
-
-  h2:hover {
-    cursor:pointer;
-    color:hsl(35, 77%, 62%);
-  }
-
-  .second-title {
-    color: hsl(35, 77%, 62%);
-    padding-bottom: 1em;
-  }
-
-  h3 {
-    color: hsl(233, 8%, 79%)
-  }
-
-  h4 {
-    color: rgb(0, 0, 0);
-    font-weight: 200;
-  }
-
-  h4:hover {
-    color:red;
-    cursor:pointer;
-  }
-
-  aside p {
-    color: white;
-  }
-
-  h1 {
-    font-size: 10em;
-    padding: 0.5em;
-    text-align:left;
-  }
-
-  button {
-    font-size: 20px;
-    background-color: hsl(5, 85%, 63%);
-    color: hsl(36, 100%, 99%);
-    width: 10em;
-    height: 3em;
-    cursor:pointer
-  }
-
-  button:hover {
-    color: white;
-    background-color: black;
-  }
-
-  .footer-container {
-    display: flex;
-  }
-
-  .foot-section {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-  }
-
-  .f-contain {
-    display: flex;
-    flex-direction: row;
-    margin-top: 3em;
-    margin-left: 2em;
-    margin-right: 2em;
-    width:100%;
-    height:30em;
-  }
-    @media only screen and (max-width: 480px) {
- 
-.grid-container {
-    display: grid;
-    height: 100vh;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr 1.5fr 2fr 0.1fr;
+    grid-template-rows: 0.5fr 1fr 1.5fr auto auto;
     grid-template-areas:
       'nav nav '
       'main main'
       'sidebar sidebar'
-      'footer-container footer-container'
+      'article-container article-container'
       'footer footer';
-    grid-gap: 20px;
   }
 
-  /* each element has a colour and radius to make visualising easier */
+  body p {
+    font-size: 20px;
+  }
 
   nav {
-    border: 1px solid black;
-    background-color: rgb(255, 210, 152);
     grid-area: nav;
+    margin: 1em;
   }
 
   main {
-    border: 1px solid black;
-    background-color: aquamarine;
     grid-area: main;
+    margin: 1em;
+  }
+
+  .main-img {
+    width: 100%;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content1 {
+    width: fit-content;
+  }
+
+  .content1 h1 {
+    text-align: left;
+    padding: 0em;
+  }
+
+  button {
+    text-align: left;
+    padding: 1em;
+  }
+
+  .content2 {
+    width: fit-content;
+    margin: 0em;
+  }
+
+  .lead {
+    padding: 0em 0em;
+    width: fit-content;
   }
 
   aside {
-    border: 1px solid black;
-    background-color: lightcoral;
     grid-area: sidebar;
+    margin: 1em;
   }
 
- .footer-container{
-  grid-area: footer-container;
-  border:2px solid red;
- }
+  aside article {
+    padding: 0em;
+  }
+
+  .article-container {
+    grid-area: article-container;
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+  }
 
   footer {
-    border: 1px solid black;
-    background-color: rgb(165, 127, 255);
     grid-area: footer;
+    margin: 1em;
+    padding: 0em;
   }
-    }
-    
+
+  .description {
+    padding-right: 1em;
+  }
+
+  .article-content img {
+    width: 200px;
+    height: 300px;
+  }
+}
